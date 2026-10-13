@@ -69,14 +69,14 @@ footer p {
   color: #fff;
 }
 
+.header h1 {
+  margin-bottom: 20px;
+}
 .header {
   display: flex;
   max-width: 1024px;
   margin: auto;
   margin-top: 20px;
-}
-.header h1 {
-  margin-bottom: 20px;
 }
 .header__right img {
   height: 100px;
@@ -84,9 +84,6 @@ footer p {
 }
 .header__left {
   width: 100%;
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
 }
 .header__left ul {
   display: flex;
@@ -193,7 +190,7 @@ footer p {
     width: 90%;
   }
   header h1,
-header ul {
+  header ul {
     display: none !important;
   }
   header .header__left {
@@ -204,7 +201,6 @@ header ul {
     display: block !important;
     height: 70px;
   }
-
   .houses {
     flex-direction: column;
     align-content: space-around;
