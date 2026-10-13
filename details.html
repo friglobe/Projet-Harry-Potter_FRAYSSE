@@ -26,43 +26,24 @@
     </header>
     <main>
       <section>
-        <h3>Harry Potter</h3>
+        <h3 id="perso-nom">Chargement…</h3>
         <div class="perso">
           <figure class="perso__left">
-            <img src="./images/characters/harry.webp" alt="Harry Potter" srcset="" />
-            <figcaption>Daniel Radcliffe</figcaption>
+            <img id="perso-image" src="./images/troll.jpg" alt="" />
+            <figcaption id="perso-acteur"></figcaption>
           </figure>
-          <div class="perso__right">
-            <div>
-              <p class="attr">Maison</p>
-              <p>Gryffondor</p>
-            </div>
-            <div>
-              <p class="attr">Date de naissance</p>
-              <p>31/07/1980</p>
-            </div>
-            <div>
-              <p class="attr">Ascendance</p>
-              <p>Sang-mêlé</p>
-            </div>
-            <div>
-              <p class="attr">Patronus</p>
-              <p>Cerf</p>
-            </div>
-            <div>
-              <p class="attr">Baguette</p>
-              <p>Houx, plume de phénix, 28 cm</p>
-            </div>
-          </div>
+          <!-- Rempli par js/details.js -->
+          <div class="perso__right" id="perso-infos"></div>
         </div>
       </section>
-      <section class="house__perso">
-        <img src="./images/logo/Gryffindor.png" alt="Gryffindor" srcset="" />
+      <section class="house__perso" id="perso-maison">
+        <img src="" alt="" />
       </section>
     </main>
     <footer>
       <p>Wiki Happy Potter is a FANDOM community</p>
     </footer>
     <script src="./js/menu.js"></script>
+    <script src="./js/details.js"></script>
   </body>
 </html>

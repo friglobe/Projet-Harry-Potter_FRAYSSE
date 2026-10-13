@@ -14,7 +14,7 @@ function afficherPersonnages(liste) {
 
     charactersDiv.innerHTML += `
       <div class="${maison}">
-        <a href="details.html">
+        <a href="details.html?id=${perso.id}">
           <img src="${image}" alt="${perso.name}">
           <p>${perso.name}</p>
         </a>
@@ -26,7 +26,7 @@ function afficherPersonnages(liste) {
 fetch(API_URL)
   .then((response) => response.json())
   .then((data) => {
-    personnages = data.slice(0, 20);
+    personnages = data;
     afficherPersonnages(personnages);
   })
   .catch((error) => {
