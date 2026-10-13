@@ -1,5 +1,6 @@
 :root {
   --light: #fff6e6;
+  --beige: #f1e2c4;
   --darkGrey: #3a3a3a;
   --gold: #b99049;
   --red: #b71713;
@@ -30,7 +31,7 @@ body {
 }
 
 main {
-  background-color: var(--light);
+  background-color: var(--beige);
   max-width: 1024px;
   margin: auto;
   margin-bottom: 70px;
@@ -147,7 +148,7 @@ footer {
     border: 8px solid var(--Gold, #b99049);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
     &:hover {
       transform: scale(1.1);
     }
@@ -157,16 +158,16 @@ footer {
     color: var(--Gold, #b99049);
   }
 
-  .gryffindor img {
+  .gryffindor img:hover {
     border-color: var(--red);
   }
-  .slytherin img {
+  .slytherin img:hover {
     border-color: var(--green);
   }
-  .ravenclaw img {
+  .ravenclaw img:hover {
     border-color: var(--blue);
   }
-  .hufflepuff img {
+  .hufflepuff img:hover {
     border-color: var(--yellow);
   }
 }
@@ -224,33 +225,49 @@ footer {
 @media screen and (max-width: 425px) {
   header {
     width: 90%;
-    position: relative;
-    h1,
+    flex-wrap: wrap;
+    align-items: center;
     ul {
       display: none !important;
     }
 
+    // Le titre passe sur sa propre ligne, sous le logo et le burger
+    h1 {
+      order: 1;
+      width: 100%;
+      margin: 15px 0 0;
+      text-align: center;
+      font-size: 22px;
+    }
+
     // Menu ouvert par le burger (classe ajoutée par js/menu.js)
+    // Il reste dans le flux de la page : le contenu est poussé en dessous
     ul.open {
       display: flex !important;
       flex-direction: column;
       gap: 15px;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      z-index: 10;
-      width: auto;
+      align-items: center;
+      order: 2;
+      // Le header ne fait que 90% de large : on décale le menu
+      // vers la gauche pour qu'il prenne toute la largeur de l'écran
+      width: 100vw;
+      flex-shrink: 0;
+      margin-left: calc(50% - 50vw);
+      margin-top: 20px;
+      box-sizing: border-box;
       padding: 20px 30px;
       background: var(--light);
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
+    // Les enfants de .header__left deviennent des éléments du header :
+    // le menu peut alors passer à la ligne sous le logo et le burger
     .header__left {
-      display: flex;
-      justify-content: flex-end;
+      display: contents;
       img {
         display: block !important;
         height: 70px;
+        margin-left: auto;
         cursor: pointer;
       }
     }
@@ -259,5 +276,31 @@ footer {
   .houses {
     flex-direction: column;
     align-content: space-around;
+  }
+
+  // Page de détail : la photo, puis les infos en dessous
+  .page_perso {
+    .perso {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 30px 20px;
+    }
+
+    figure {
+      margin-right: 0;
+    }
+
+    .perso__right {
+      gap: 15px;
+    }
+
+    .house__perso {
+      padding: 30px 0;
+
+      img {
+        width: 150px;
+      }
+    }
   }
 }
