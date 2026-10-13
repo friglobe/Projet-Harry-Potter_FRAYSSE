@@ -164,6 +164,10 @@ footer p {
   border-color: var(--yellow);
 }
 
+.mort {
+  filter: grayscale(100%);
+}
+
 /* PAGE PERSO */
 .page_perso h3 {
   padding: 50px 50px 0 50px;

@@ -11,11 +11,12 @@ function afficherPersonnages(liste) {
   liste.forEach((perso) => {
     const image = perso.image || IMAGE_PAR_DEFAUT;
     const maison = perso.house ? perso.house.toLowerCase() : "";
+    const mort = perso.alive ? "" : "mort";
 
     charactersDiv.innerHTML += `
       <div class="${maison}">
         <a href="details.html?id=${perso.id}">
-          <img src="${image}" alt="${perso.name}">
+          <img class="${mort}" src="${image}" alt="${perso.name}">
           <p>${perso.name}</p>
         </a>
       </div>

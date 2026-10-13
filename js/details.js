@@ -37,6 +37,10 @@ function afficherPersonnage(perso) {
   image.alt = perso.name;
   acteur.textContent = valeur(perso.actor);
 
+  if (!perso.alive) {
+    image.classList.add("mort");
+  }
+
   const baguette = [
     perso.wand.wood,
     perso.wand.core,
@@ -50,7 +54,8 @@ function afficherPersonnage(perso) {
     ligne("Date de naissance", perso.dateOfBirth) +
     ligne("Ascendance", perso.ancestry) +
     ligne("Patronus", perso.patronus) +
-    ligne("Baguette", baguette);
+    ligne("Baguette", baguette) +
+    ligne("Surnoms", perso.alternate_names.join(", ") || "Aucun");
 
   if (perso.house) {
     const blason = maisonSection.querySelector("img");

@@ -172,6 +172,11 @@ footer {
   }
 }
 
+// Personnage mort : photo en noir et blanc (classe ajoutée en JS)
+.mort {
+  filter: grayscale(100%);
+}
+
 /* PAGE PERSO */
 .page_perso {
   h3 {
