@@ -110,6 +110,7 @@ footer p {
   width: 140px;
   height: 140px;
   text-align: center;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 .houses > div:hover {

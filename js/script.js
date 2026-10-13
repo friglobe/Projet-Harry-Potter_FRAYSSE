@@ -33,3 +33,17 @@ fetch(API_URL)
     console.error(error);
     charactersDiv.innerHTML = "<p>Impossible de charger les personnages.</p>";
   });
+
+const maisons = document.querySelectorAll(".houses > div");
+
+maisons.forEach((maisonDiv) => {
+  maisonDiv.addEventListener("click", () => {
+    const maison = maisonDiv.dataset.house;
+
+    const personnagesTries = personnages
+      .filter((perso) => perso.house === maison)
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    afficherPersonnages(personnagesTries);
+  });
+});
